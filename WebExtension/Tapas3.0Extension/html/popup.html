@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <link href="https://fonts.googleapis.com/css?family=Exo+2" rel="stylesheet">
+    <meta charset="utf-8" lang=en>
+    <link rel="manifest" href="../manifest.json">
+    <title>Tapas3.0</title>
+    <script src="../js/core.js"></script>
+    <script src="../js/aes.js"></script>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+    <link rel="stylesheet" type="text/css" href="../style/styles.css">
+    <script src="../js/firebase.js"></script>
+    <script src="../js/popup.js"></script>
+    <script src="../js/firebaseui.js"></script>
+    <script src="../js/jquery.min.js"></script>
+    <script src="../js/qrcode.js"></script>
+    <link type="text/css" rel="stylesheet" href="../style/firebaseui.css" />
+    <style>
+        html {
+            font-family: 'Exo 2', sans-serif;
+        }
+    </style>
+</head>
+
+<body style="background: url(../white-waves.png)">
+    <div class="container">
+        <div id="login-error" class="alert alert-danger" style="display:None;">
+        </div>
+        <h3 id='pairhr'>
+		Scan this QRCode using the Tapas3.0 mobile app.
+		</h3>
+        <div id="pairqr" align="center"></div>
+        <div id="form" style="display:None;">
+            <p>Enter Username and Password:</p>
+            <div style="padding-top: 10px;">
+                <input type="text" name="login_user" id="login_user">
+                <input type="password" name="login_pass" id="login_pass">
+            </div>
+            <input type="submit" id="auth" value="Login" />
+        </div>
+        <div align=left id="lister">
+            <div id="wrapper" style="overflow:scroll">
+                <table class="table">
+                </table>
+            </div>
+			<div class="row">
+            <button id="reg" title="Click to add new credentials" class="btn btn-primary" style="margin-top: 0px">Add New Credentials</button>
+			<button id="unpair" title="Unpair" class="btn btn-danger">Unpair</button>
+			</div>
+        </div>
+        <div id="addpassqr_block" align='center' style="display:None;">
+            <h3>
+			Sending your password to the phone...
+			</h3>
+            <div id="addpassqr" align="center"></div>
+            <button id="done_addpass">Done</button>
+        </div>
+        <input id="pass123" name="pass123" type="hidden" value="test1234">
+        <div id="add"></div>
+
+        <div id="register" class="card">
+            <div class="input-group mb-3">
+                <div class="input-group-prepend">
+                    <div class="input-group-text">
+                        Website URL
+                    </div>
+                </div>
+                <input type="text" class="form-control" id="url" placeholder="Ex: example.org">
+            </div>
+            <div class="input-group mb-3">
+                <div class="input-group-prepend">
+                    <div class="input-group-text">
+                        Username:
+                    </div>
+                </div>
+
+                <input type="text" class="form-control" id="username" placeholder="Ex: Bob123">
+            </div>
+            <div class="input-group mb-3">
+                <div class="input-group-prepend">
+                    <div class="input-group-text">
+                        Password:
+                    </div>
+                </div>
+                <input type="text" class="form-control" id="password" placeholder="Ex: Mypassword123">
+
+            </div>
+            <button id="sub" class="btn btn-success" enabled>Save</button>
+
+        </div>
+        <div id="sitePage">
+            <div id="back"><img src="" width=32 height=32></div>
+            <div id="siteTitle"></div>
+            <label>
+                Username:
+                <input type='text' id="siteUser" name="username" readonly>
+            </label>
+            <label>
+                Password:
+                <input type="text" id="sitePass" name="generated" readonly>
+            </label>
+            <div id="buttonRow">
+                <button id="remove" class="btn btn-danger">Remove</button>
+                <button id="goto" class="btn btn-success">Login</button>
+
+            </div>
+        </div>
+    </div>
+</body>
+
+</html>
