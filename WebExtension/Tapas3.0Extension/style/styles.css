@@ -1,0 +1,117 @@
+#lister, #register, #sitePage {
+    display: none;
+}
+
+body {
+    font-family: "Times";
+    font-size: 1.5em; 
+    height: 300px;
+    width: 400px;
+}
+
+#form div {
+    padding-bottom: 1em;
+    padding-top: 2em;
+}
+
+#form input {
+    margin-right: 1em;
+}
+
+#lister {
+    font-size: .6em;
+}
+
+#wrapper {
+    max-height: 250px;
+    overflow-y: scroll;
+}
+
+table {
+    color: black;
+    border: 1px solid black;
+    font-size: .9em;
+    border-collapse: collapse;
+}
+
+tr:hover {
+    cursor: pointer;
+    background-color: rgb(201, 201, 201);
+}
+
+th {
+    background-color: rgb(171, 177, 188);
+    padding: .3em;
+}
+
+td, th{
+    border: 1px solid black;
+    overflow: scroll;
+}
+
+#reg {
+    position: fixed;
+    right: 40%;
+    margin-top: 10px;
+}
+
+#add {
+    position: fixed;
+    left: 5%;
+    margin-top: 10px;
+}
+
+#warning {
+    position: static;
+    left: 0%;
+    color: black;
+    font-size: .9em;
+}
+
+::-webkit-scrollbar { 
+    display: none; 
+}
+
+label {
+    font-size: .7em;
+    padding-top: .5em;
+    float: left;
+}
+
+label input {
+    float: right;
+    margin-left: 3em;
+}
+
+.close {
+    margin-left: 7.6em;
+}
+
+#sub {
+    margin-top: 6em;
+}
+
+#siteTitle {
+    padding-bottom: 1.5em;
+}
+
+#buttonRow {
+    margin-top: 5em;
+}
+
+#back {
+    float: left;
+    position: fixed;
+    left: 0%;
+    padding-left: .5em;
+    border: 0;
+}
+
+#back:hover {
+    cursor:pointer;
+}
+
+/*#back img:hover {
+    width: 34px;
+    height: 34px;
+}*/
