@@ -1,0 +1,35 @@
+{
+    //https://developer.chrome.com/extensions/manifestVersion
+    "manifest_version": 2,
+    "name": "Tapas3.0",
+    "version": "1.0",
+    "description": "Stores passwords that are encrypted with the user's login key.",
+    "browser_action": {
+        "default_popup": "html/popup.html",
+        "default_title": "do you want to login to this site?"
+    },
+    
+    // need permission to store info and enter data into tabs, often creating new ones
+    "permissions": [
+        "tabs",
+        "activeTab",
+        "storage",
+		"contextMenus"
+    ],
+    
+    // listen for a user click
+    "background": {
+        "scripts": ["js/background.js"
+					],
+        "persistent": false
+    },
+	"content_security_policy": "script-src 'self' https://*.firebaseio.com https://*.gstatic.com https://* 'unsafe-inline'; object-src 'self'",
+	"gcm_sender_id": "103953800507",
+	
+	"content_scripts": [
+			{
+				"matches": ["<all_urls>"],
+				"js": ["js/getPagesSource.js"]
+			}
+	]
+}
